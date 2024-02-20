@@ -1,0 +1,68 @@
+# IDE and editor files
+*.suo
+*.sln
+*.vscode
+*.sublime-project
+*.sublime-workspace
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+# Build products
+build/
+dist/
+output/
+
+# Temporary files
+*.tmp
+*.log
+*.pyc
+*.class
+
+# Version control systems
+.git/
+.svn/
+.hg/
+
+# Local configuration
+client/.env
+api/.env
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Documentation
+docs/
+
+# Tests
+tests/
+
+# Coverage reports
+coverage/
+
+# IDE specific files
+# (adjust based on your IDE)
+.idea/
+
+# OS specific files
+.DS_Store
+
+# Package managers
+node_modules/
+vendor/
+
+# Bundlers
+npm-shrinkwrap.json
+yarn.lock
+
+# Dependency lock files
+package-lock.json
