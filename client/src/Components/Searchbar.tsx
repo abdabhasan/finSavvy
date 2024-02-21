@@ -1,14 +1,8 @@
-interface Props {
-  searchTerm: string;
-  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
-}
+import { useDashboardContext } from "../context/DashboardContext";
 
-const Searchbar: React.FC<Props> = ({
-  searchTerm,
-  handleChange,
-  handleSubmit,
-}): JSX.Element => {
+const Searchbar = (): JSX.Element => {
+  const { searchTerm, handleChange, handleSubmit } = useDashboardContext();
+
   return (
     <>
       <form onSubmit={handleSubmit} className="max-w-md mx-auto px-4 mt-14">

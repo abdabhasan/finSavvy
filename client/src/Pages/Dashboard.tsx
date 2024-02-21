@@ -2,26 +2,13 @@ import { Searchbar, StocksList, Loading } from "../Components";
 import { useDashboardContext } from "../context/DashboardContext";
 
 const Dashboard: React.FC = (): JSX.Element => {
-  const {
-    searchTerm,
-    searchResults,
-    isLoading,
-    error,
-    handleChange,
-    handleSubmit,
-  } = useDashboardContext();
+  const { searchResults, isLoading, error } = useDashboardContext();
 
   return (
     <main className="flex-grow relative">
-      <Searchbar
-        searchTerm={searchTerm}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-      />
+      <Searchbar />
 
-      {searchResults && searchResults.length > 0 && (
-        <StocksList searchResults={searchResults} />
-      )}
+      {searchResults && searchResults.length > 0 && <StocksList />}
       {/* error message */}
       {error && <div>Error: {error}</div>}
 

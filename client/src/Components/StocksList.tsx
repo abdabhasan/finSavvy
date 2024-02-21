@@ -1,10 +1,13 @@
 import { CompanySearch } from "../company";
+import { useDashboardContext } from "../context/DashboardContext";
 
-interface Props {
-  searchResults: CompanySearch[];
-}
+const StocksList: React.FC = () => {
+  const { searchResults, addFavorite } = useDashboardContext();
 
-const StocksList: React.FC<Props> = ({ searchResults }) => {
+  const handleAddToFavorites = (stock: CompanySearch) => {
+    addFavorite(stock);
+  };
+
   return (
     <div className="relative overflow-x-auto p-6 mx-10 mt-6">
       <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -21,6 +24,9 @@ const StocksList: React.FC<Props> = ({ searchResults }) => {
             </th>
             <th scope="col" className="px-6 py-3">
               Currency
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Favorite
             </th>
           </tr>
         </thead>
@@ -40,6 +46,14 @@ const StocksList: React.FC<Props> = ({ searchResults }) => {
                 <td className="px-6 py-4">{stock.symbol}</td>
                 <td className="px-6 py-4">{stock.exchangeShortName}</td>
                 <td className="px-6 py-4">{stock.currency}</td>
+                <td className="px-6 py-4">
+                  <button
+                    onClick={() => handleAddToFavorites(stock)}
+                    className="text-white bg-rose-500 hover:bg-rose-700 px-2 py-1 rounded transition-all duration-300"
+                  >
+                    Add
+                  </button>
+                </td>
               </tr>
             );
           })}

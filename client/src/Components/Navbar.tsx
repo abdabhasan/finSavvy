@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import Sidebar from "./Sidebar";
+import { navbarLinks } from "../helpers/constants";
 
 const Navbar: React.FC = (): JSX.Element => {
   return (
@@ -11,9 +12,13 @@ const Navbar: React.FC = (): JSX.Element => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-rose-50">
-          <li>
-            <Link to="dashboard">Dashboard</Link>
-          </li>
+          {navbarLinks.map((link) => {
+            return (
+              <li key={link.id} className="capitalize">
+                <Link to={link.url}>{link.url}</Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
       <div className="navbar-end mr-10">

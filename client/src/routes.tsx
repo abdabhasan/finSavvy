@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "./Layouts/HomeLayout";
 import { Hero } from "./Components";
-import { Dashboard, Login } from "./Pages";
+import { Dashboard, Login, Favorites } from "./Pages";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +18,10 @@ export const router = createBrowserRouter([
       {
         element: <Login />,
         path: "/login",
+      },
+      {
+        element: <Favorites />,
+        path: "/favorites",
       },
     ],
   },

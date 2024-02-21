@@ -1,23 +1,30 @@
-import React from "react";
+import { CompanySearch } from "../company";
+import { useDashboardContext } from "../context/DashboardContext";
 
 interface Props {
-  title: stirng;
+  stock: CompanySearch;
 }
 
-const Card: React.FC<Props> = ({ title }: Props): JSX.Element => {
+const Card: React.FC<Props> = ({ stock }: Props): JSX.Element => {
+  const { removeFavorite } = useDashboardContext();
+
+  const handleRemoveFavorite = (stock: CompanySearch) => {
+    removeFavorite(stock);
+  };
+
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
-      <figure>
-        <img
-          src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          alt="Shoes"
-        />
-      </figure>
+    <div className="card max-w-sm bg-neutral shadow-xl">
       <div className="card-body">
-        <h2 className="card-title">{title}</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <h2 className="card-title">{stock.symbol}</h2>
+        <p>{stock.currency}</p>
+        <p>{stock.stockExchange}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+          <button
+            onClick={() => handleRemoveFavorite(stock)}
+            className="btn text-white bg-rose-500 hover:bg-rose-700 transition-all duration-300"
+          >
+            Remove
+          </button>
         </div>
       </div>
     </div>
