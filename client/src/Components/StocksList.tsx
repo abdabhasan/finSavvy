@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { CompanySearch } from "../company";
 import { useDashboardContext } from "../context/DashboardContext";
 
@@ -26,6 +27,9 @@ const StocksList: React.FC = () => {
               Currency
             </th>
             <th scope="col" className="px-6 py-3">
+              Info
+            </th>
+            <th scope="col" className="px-6 py-3">
               Favorite
             </th>
           </tr>
@@ -46,6 +50,14 @@ const StocksList: React.FC = () => {
                 <td className="px-6 py-4">{stock.symbol}</td>
                 <td className="px-6 py-4">{stock.exchangeShortName}</td>
                 <td className="px-6 py-4">{stock.currency}</td>
+                <td className="px-6 py-4">
+                  <Link
+                    to={`/company/${stock.symbol}`}
+                    className="text-rose-500 bg-rose-50 hover:bg-rose-500 hover:text-rose-50 px-2 py-1 rounded transition-all duration-300"
+                  >
+                    More
+                  </Link>
+                </td>
                 <td className="px-6 py-4">
                   <button
                     onClick={() => handleAddToFavorites(stock)}

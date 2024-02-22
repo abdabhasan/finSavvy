@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CompanySearch } from "./company";
+import { CompanyProfile, CompanySearch } from "./company";
 
 const API_KEY = import.meta.env.VITE_FINANCIAL_MODELING_PREP_API_KEY;
 
@@ -19,5 +19,15 @@ export const searchCompanies = async (
       console.error("Unexpected error: ", error);
       throw new Error("An unexpected error has occurred.");
     }
+  }
+};
+export const getCompanyProfile = async (query: string) => {
+  try {
+    const data = await axios.get<CompanyProfile[]>(
+      `https://financialmodelingprep.com/api/v3/profile/${query}?apikey=${API_KEY}`
+    );
+    return data;
+  } catch (error: any) {
+    console.log("error message from API: ", error.message);
   }
 };
