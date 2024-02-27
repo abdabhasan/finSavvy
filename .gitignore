@@ -11,6 +11,8 @@ Thumbs.db
 # Binaries and object files
 api/[Bb]in/
 api/[Oo]bj/
+[Bb]in/
+[Oo]bj/
 # User-specific files
 api/*.user
 api/*.userosscache
