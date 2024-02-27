@@ -1,119 +1,80 @@
-# IDE and editor files
-*.suo
+# General
+*.log
+*.sql
+*.sqlite
 *.sln
-*.vscode
-*.sublime-project
-*.sublime-workspace
-.vscode/*
-!.vscode/extensions.json
-.idea
+# OS-specific
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+Thumbs.db
 
-## .NET
-[Bb]in/
-[Oo]bj/
-[Ll]ogs/
-[Aa]rtifacts/
+## .NET Core / .NET 5+ API exclusions ##
+# Binaries and object files
 api/[Bb]in/
 api/[Oo]bj/
+# User-specific files
+api/*.user
+api/*.userosscache
+api/*.suo
+# Build results
 api/[Ll]ogs/
 api/[Aa]rtifacts/
-*.nupkg
-*.snupkg
-*.user
-*.userosscache
-*.suo
-*.userprefs
-*.dll
-*.exe
-*.pdb
-*.cache
-*.vsp
-*.vspx
-*.runtimeconfig.dev.json
-global.json
-replstate.json
-*.csproj.DotSettings
-*.nuget.props
-*.nuget.targets
-project.lock.json
-ProjectSettings.json
-*.psess
-*.vsp
-*.vspx
-*.pidb
-*.svclog
-*.mdf
-*.ldf
-*.dbmdl
-*.jfm
-*.log
-*.sqlite
-*.db
+# NuGet
+api/*.nupkg
+api/project.lock.json
+# ReSharper
+api/*.DotSettings
 # Rider
-.idea/
-*.sln.iml
+api/.idea/
+# Visual Studio Code
+.api/.vscode/
+# Visual Studio
+api/.vs/
+api/*.opendb
+api/*.openproj
+api/*.dbmdl
+# ASP.NET Sensitive Files
+api/appsettings*.json
+!api/appsettings.json
+!api/appsettings.Development.json
 
-## ASP.NET Sensitive Files ##
-appsettings*.json
-!appsettings.json
-!appsettings.Development.json
-
-
-# Build products
-build/
-dist/
-output/
-
-# Temporary files
-*.tmp
-*.log
-*.pyc
-*.class
-
-# Version control systems
-.git/
-.svn/
-.hg/
-
-# Local configuration
+## React Client exclusions ##
+# Dependencies
+client/node_modules/
+# Package lock
+client/package-lock.json
+# Build output
+client/build/
+# Misc
 client/.env
-api/.env
+client/.env.local
+client/.env.development.local
+client/.env.test.local
+client/.env.production.local
+# TypeScript
+client/*.tsbuildinfo
+# Logs
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+# Editor directories and files
+client/.idea/
+client/.vscode/
+# Next.js
+client/.next/
+# Gatsby
+client/.cache/
+# Storybook
+client/storybook-static
+
+# Global TypeScript
+*.tsbuildinfo
+
+# Global Node
+.npm
+.npmrc
+.node_repl_history
+.yarn-integrity
 .env
-.env.local
-.env.development
 .env.test
 .env.production
-
-# Documentation
-docs/
-
-# Tests
-tests/
-
-# Coverage reports
-coverage/
-
-# IDE specific files
-# (adjust based on your IDE)
-.idea/
-
-# OS specific files
-.DS_Store
-
-# Package managers
-node_modules/
-vendor/
-
-# Bundlers
-npm-shrinkwrap.json
-yarn.lock
-
-# Dependency lock files
-package-lock.json
-.fake
+.eslintcache
