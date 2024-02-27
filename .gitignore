@@ -14,6 +14,56 @@
 *.sln
 *.sw?
 
+## .NET
+[Bb]in/
+[Oo]bj/
+[Ll]ogs/
+[Aa]rtifacts/
+api/[Bb]in/
+api/[Oo]bj/
+api/[Ll]ogs/
+api/[Aa]rtifacts/
+*.nupkg
+*.snupkg
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.dll
+*.exe
+*.pdb
+*.cache
+*.vsp
+*.vspx
+*.runtimeconfig.dev.json
+global.json
+replstate.json
+*.csproj.DotSettings
+*.nuget.props
+*.nuget.targets
+project.lock.json
+ProjectSettings.json
+*.psess
+*.vsp
+*.vspx
+*.pidb
+*.svclog
+*.mdf
+*.ldf
+*.dbmdl
+*.jfm
+*.log
+*.sqlite
+*.db
+# Rider
+.idea/
+*.sln.iml
+
+## ASP.NET Sensitive Files ##
+appsettings*.json
+!appsettings.json
+!appsettings.Development.json
+
 
 # Build products
 build/
