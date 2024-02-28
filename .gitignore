@@ -3,6 +3,7 @@
 *.sql
 *.sqlite
 *.sln
+.fake
 # OS-specific
 .DS_Store
 Thumbs.db
